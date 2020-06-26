@@ -1,0 +1,36 @@
+@import url('https://fonts.googleapis.com/css2?family=Pangolin&display=swap');
+
+*{
+    font-family: 'Pangolin';   
+    background-color: black; 
+}
+
+h1{
+    color: whitesmoke;
+    text-align: center;
+}
+
+#image1{
+    text-align: center;
+    position: absolute;
+    width: 800px;
+    height: 400px;
+    margin-left: 360px;
+    margin-top: 3px;
+}
+
+#q1_yes{
+    position: absolute;
+    font-size: 1.5rem;    
+    width:250px;
+    height:60px;    
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    border-radius: 10px;
+    border-width: 0px;
+    background-color:darkgrey;
+    cursor: pointer;
+    margin-top: 500px;
+    margin-left: 600px;
+}

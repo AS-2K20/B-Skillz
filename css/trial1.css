@@ -1,0 +1,148 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    font-size: 20px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+#div_start{
+    font-size: large;
+    font-weight: 700;
+    margin:50px;
+    padding: 10px;
+}
+
+#div_img_container{
+    position: relative;
+     background-color:black;
+    /* background-image: url(../assets/sh\ bg3.jpg); */
+    width: 900px;
+    height: 790px;
+    margin-top: 0px;
+    margin-left: 300px;
+    align-content: stretch;
+    float: left;
+}
+
+#img1_div img{
+    height: 600px;
+    width: 620px;
+    position: absolute;
+    margin-top: -20px;
+    margin-left: -80px;
+}
+
+#img2_div img{
+    height: 600px;
+    width: 620px;
+    position: absolute;
+    margin-left: 400px;    
+    margin-top: -80px;
+}
+
+#img3_div img{
+    height:900px;
+    width:920px;
+    position:absolute;
+    margin-left: 20px;
+    margin-top:30px;
+}
+
+#img4_div img{
+    height: 600px;
+    width: 620px;
+    position: absolute;
+    margin-top: 250px;
+    margin-left: -80px;
+}
+
+#img5_div img{
+    height: 600px;
+    width: 620px;
+    position: absolute;
+    margin-left: 420px;
+    margin-top:220px ;
+}
+
+#btn_yes{
+    font-size: 1.5rem;
+    position: absolute;
+    width:250px;
+    height:50px;
+    margin-top: 100px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    border-radius: 10px;
+    border-width: 0px;
+    background-color: deeppink;
+    margin-top: 660px;
+    margin-left:-730px;  
+    cursor: pointer;  
+}
+
+#btn_no{
+    font-size: 1.5rem;
+    position: absolute;
+    margin-top: 660px;
+    margin-left: -410px;
+    width:250px;
+    height:50px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    border-radius: 10px;
+    border-width: 0px;    
+    background-color: dodgerblue;    
+    cursor: pointer;
+}
+
+#div_container{
+    background-image: url(../assets/bg_try_1.png);
+    display: flex;
+}
+#div_question{
+    font-size: 3rem;
+    color: white;
+    margin-left: 80px;
+}
+
+#timer{
+    position: absolute;
+    height: 100px;
+    width: 200px;
+    text-align: center;
+}
+
+#counter{
+    font-size: 3em;
+    color: goldenrod;
+    padding: 3px;
+    border:2px dotted burlywood;
+    position: absolute;
+    border-radius: 50px;
+}
+
+#right_div{
+    position: absolute;
+    width:50px;
+    height:50px;
+   border-radius: 50%;    
+    margin-top: 10px;
+    margin-left: 650px;
+    border: 5px solid goldenrod;
+}
+
+#wrong_div{
+    position: absolute;
+    width:50px;
+    height:50px;
+   border-radius: 50%;    
+    margin-top: 10px;
+    margin-left: 750px;
+    border: 5px solid goldenrod;
+}
+

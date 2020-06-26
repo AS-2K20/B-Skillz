@@ -1,0 +1,78 @@
+@import url('https://fonts.googleapis.com/css2?family=Pangolin&display=swap');
+
+*{
+    font-family: 'Pangolin';   
+    background-color: black; 
+}
+p{
+    margin-top: 30px;
+    color: whitesmoke;
+    margin-left: 30px;
+    text-align: center;
+    font-size: 1.5rem;
+}
+
+#heading{
+    font-size: 1.8rem;
+    color: whitesmoke;
+    text-align: center;
+}
+
+#div_ins{
+    position: absolute;
+    margin-top: 50px;
+    border: 5px dotted moccasin;
+    padding: 5px;
+    margin-left: 1000px;
+}
+
+#logo{
+    height: auto;
+    width: 1000px;
+}
+
+#levels{
+    font-size: 3rem;
+    color: peru;
+    text-align: center;
+}
+
+#lvl1{
+    /* position: absolute; */
+    font-size: 1.5rem;    
+    width:250px;
+    height:60px;    
+    text-align: center;    
+    border-radius: 10px;
+    border-width: 0px;
+    background-color:mediumturquoise;
+    cursor: pointer;
+    margin-top: 50px;
+    margin-left: 360px;
+}
+
+#lvl2{
+    font-size: 1.5rem;    
+    width:250px;
+    height:60px;    
+    text-align: center;    
+    border-radius: 10px;
+    border-width: 0px;
+    background-color:dodgerblue;
+    cursor: pointer;
+    margin-top: 40px;
+    margin-left: 30px;
+}
+
+#lvl3{
+    font-size: 1.5rem;    
+    width:250px;
+    height:60px;    
+    text-align: center;    
+    border-radius: 10px;
+    border-width: 0px;
+    background-color:indianred;
+    cursor: pointer;
+    margin-top: 40px;
+    margin-left: 30px;
+}
