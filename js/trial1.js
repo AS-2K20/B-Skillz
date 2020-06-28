@@ -1,22 +1,9 @@
-var start = document.getElementById("div_start");
-var btn_yes = document.getElementById("btn_yes"); 
-var btn_no = document.getElementById("btn_no");
-var img_c = document.getElementById("div_img_container");
-var question = document.getElementById("div_question");
-var img1 =document.getElementById("img1_div");
-var img2 =document.getElementById("img2_div");
-var img3 =document.getElementById("img3_div");
-var img4 =document.getElementById("img4_div");
-var img5 =document.getElementById("img5_div");
-let counter = document.getElementById("counter");
-var right_ans = document.getElementById("right_div");
-var wrong_ans = document.getElementById("wrong_div");
 
 var questions = [
     {
         question:'Is Biggest Image has the SAME COLOUR as last one?',
         image1:'../assets/circle_brow.svg',
-        image2:'../assets/sq_vio.svg',
+        image2:'../assets/sq_yell.svg',
         image4:'../assets/sta_red.svg',
         image5:'../assets/pe_red.svg',
         previous:'../assets/tri_yell.svg',
@@ -27,7 +14,7 @@ var questions = [
         question:'Is Biggest Image has the SAME SHAPE as last one?',
         image1:'../assets/circle_red.svg',
         image2:'../assets/sq_vio.svg',
-        image4:'../assets/sta_dk_blue.svg',
+        image4:'../assets/sq_yell.svg',
         image5:'../assets/pe_red.svg',
         previous:'../assets/tri_vio.svg',
         current:'../assets/tri_vio.svg',
@@ -566,7 +553,7 @@ var questions = [
     {
         question:'Is Biggest Image has the SAME COLOUR as last one?',
         image1:'../assets/sta_bro.svg',
-        image2:'../assets/sq_vi.svg',
+        image2:'../assets/sq_vio.svg',
         image4:'../assets/sta_red.svg',
         image5:'../assets/circle_vio.svg',
         previous:'../assets/circle_red.svg',
@@ -645,6 +632,20 @@ var questions = [
     }
 ];
 
+var start = document.getElementById("div_start");
+var btn_yes = document.getElementById("btn_yes"); 
+var btn_no = document.getElementById("btn_no");
+var img_c = document.getElementById("div_img_container");
+var question = document.getElementById("div_question");
+var img1 =document.getElementById("img1_div");
+var img2 =document.getElementById("img2_div");
+var img3 =document.getElementById("img3_div");
+var img4 =document.getElementById("img4_div");
+var img5 =document.getElementById("img5_div");
+let counter = document.getElementById("counter");
+var right_ans = document.getElementById("right_ans");
+var wrong_ans = document.getElementById("wrong_ans");
+
 
 window.onload = function (){
    preQuestion();
@@ -663,7 +664,8 @@ let speedSkill;
 let focusSkill;
 let correctPercentage;
 var ans_value;
-
+var cate;
+var level1;
 
 
 
@@ -677,7 +679,7 @@ function preQuestion(){
   
     btn_yes.style.visibility='hidden';
     btn_no.style.visibility='hidden';
-    setTimeout(startQuestion,3000);
+    setTimeout(startQuestion,2000);
 }
 
 function startQuestion(){
@@ -721,34 +723,25 @@ function giveQuestions(){
     img3.innerHTML = "<img src="+ q.current +">";
     img4.innerHTML = "<img src="+ q.image4 +">";
     img5.innerHTML = "<img src="+ q.image5 +">";
-    // document.getElementById("right_div").style.backgroundColor="#000000";
-    // document.getElementById("wrong_div").style.backgroundColor="#000000";
+   
 }
 
 function checkAnswer(ans){
  if(ans == questions[runningQuestion].answer)
  {
     totalCorrectAnswer++;
-    greenColour();    
+    document.getElementById("right_ans").play();  
     runningQuestion++;
    
     
  }
  else{
-     redColour();    
+    document.getElementById("wrong_ans").play();
     runningQuestion++;
 }
 }
 
-function greenColour(){
-   console.log( document.getElementById("right_div").style.backgroundColor="#adff2f");
-    console.log("inside green color");
-}
 
-function redColour(){
-    console.log(document.getElementById("wrong_div").style.backgroundColor="#ff0000");
-    console.log("inside red color");
-}
 
 function timerCount(){
     if(count1-1>=i){
@@ -763,7 +756,7 @@ function timerCount(){
 
 
 function resultCalulation(){
-totalQuestionsAnswered = runningQuestion-1;
+totalQuestionsAnswered = runningQuestion;
 if (totalQuestionsAnswered <0){
     totalQuestionsAnswered = 0;
 }
@@ -772,18 +765,45 @@ averageTimeTaken = totalQuestionsAnswered / 50;
 speedSkill = averageTimeTaken ;
 correctPercentage = totalCorrectAnswer/totalQuestionsAnswered;
 focusSkill = (correctPercentage * 100).toFixed(2);
-// console.log(totalQuestionsAnswered);
-// console.log(totalCorrectAnswer);
-// console.log("Your Speed Skill: ",speedSkill);
-// console.log("Your Focus Skill: ",focusSkill,"%");
+console.log(totalQuestionsAnswered);
+console.log(totalCorrectAnswer);
+console.log("Your Speed Skill: ",speedSkill);
+console.log("Your Focus Skill: ",focusSkill,"%");
+category(totalQuestionsAnswered,totalCorrectAnswer);
 
 window.localStorage.setItem('speedskill_bs1',speedSkill);
 window.localStorage.setItem('focusskill_bs1',focusSkill);
 window.localStorage.setItem('totalansweredquestions_bs1',totalQuestionsAnswered);
 window.localStorage.setItem('totalcorrectanswer_bs1',totalCorrectAnswer);
+window.localStorage.setItem('category',cate);
 
-
-
-//window.location.replace("result.html");  
+window.location.replace("result1.html");  
 }
 
+function category(a,b){
+    var tQA = a;
+    var tCA = b;
+
+    if((tQA>50)&&(tCA<50)){
+        cate = "hybrid";
+    }
+
+    else if((tQA>0) && (tQA<=28)&& (tCA>0) && (tCA<=28)){
+        cate = "seed";
+    }
+
+    else if((tQA>=29) && (tQA<=40) && (tCA>=29) && (tCA<=40)){
+        cate ="plant";
+    }
+
+    else if((tQA>=41) && (tCA>=41))
+    {
+        cate = "tree";
+    }
+    else if((tQA==0) && (tCA==0)){
+        cate = "zero";
+    }
+    else {
+        cate = "hybrid";
+    }
+}

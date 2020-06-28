@@ -1,20 +1,9 @@
-var start = document.getElementById("div_start");
-var btn_yes = document.getElementById("btn_yes"); 
-var btn_no = document.getElementById("btn_no");
-var img_c = document.getElementById("div_img_container");
-var question = document.getElementById("div_question");
-var img1 =document.getElementById("img1_div");
-var img2 =document.getElementById("img2_div");
-var img3 =document.getElementById("img3_div");
-var img4 =document.getElementById("img4_div");
-var img5 =document.getElementById("img5_div");
-let counter = document.getElementById("counter");
 
 var questions = [
     {
         question:'Is Biggest Image has the SAME COLOUR as last one?',
         image1:'../assets/circle_brow.svg',
-        image2:'../assets/sq_vio.svg',
+        image2:'../assets/sq_yell.svg',
         image4:'../assets/sta_red.svg',
         image5:'../assets/pe_red.svg',
         previous:'../assets/tri_yell.svg',
@@ -25,260 +14,10 @@ var questions = [
         question:'Is Biggest Image has the SAME SHAPE as last one?',
         image1:'../assets/circle_red.svg',
         image2:'../assets/sq_vio.svg',
-        image4:'../assets/sta_dk_blue.svg',
+        image4:'../assets/sq_yell.svg',
         image5:'../assets/pe_red.svg',
         previous:'../assets/tri_vio.svg',
         current:'../assets/tri_vio.svg',
-        answer:'YES'
-    },
-    {
-        question:'Is Biggest Image has the SAME SHAPE as last one?',
-        image1:'../assets/tri_dkBlue.svg',
-        image2:'../assets/sq_lblue.svg',
-        image4:'../assets/circle_pink.svg',
-        image5:'../assets/pe_red.svg',
-        previous:'../assets/tri_vio.svg',
-        current:'../assets/tri_pi.svg',
-        answer:'YES'
-    },
-    {
-        question:'Is Biggest Image has the SAME COLOUR as last one?',
-        image1:'../assets/circle_brow.svg',
-        image2:'../assets/sq_red.svg',
-        image4:'../assets/sta_yel.svg',
-        image5:'../assets/pe_red.svg',
-        previous:'../assets/tri_pi.svg',
-        current:'../assets/sta_red.svg',
-        answer:'NO'
-    },
-    {
-        question:'Is Biggest Image has the SAME COLOUR as last one?',
-        image1:'../assets/circle_brow.svg',
-        image2:'../assets/sq_vio.svg',
-        image4:'../assets/sta_red.svg',
-        image5:'../assets/pe_red.svg',
-        previous:'../assets/sta_red.svg',
-        current:'../assets/sta_pink.svg',
-        answer:'NO'
-    },
-    {
-        question:'Is Biggest Image has the SAME COLOUR as last one?',
-        image1:'../assets/circle_pink.svg',
-        image2:'../assets/tri_vio.svg',
-        image4:'../assets/sta_dk_blue.svg',
-        image5:'../assets/sq_yell.svg',
-        previous:'../assets/sta_pink.svg',
-        current:'../assets/pe_pink.svg',
-        answer:'YES'
-    },
-    {
-        question:'Is Biggest Image has the SAME SHAPE as last one?',
-        image1:'../assets/circle_red.svg',
-        image2:'../assets/sq_brow.svg',
-        image4:'../assets/sta_red.svg',
-        image5:'../assets/tri_brow.svg',
-        previous:'../assets/pe_pink.svg',
-        current:'../assets/pe_vio.svg',
-        answer:'YES'
-    },
-    {
-        question:'Is Biggest Image has the SAME SHAPE as last one?',
-        image1:'../assets/pe_dkblue.svg',
-        image2:'../assets/tri_yell.svg',
-        image4:'../assets/circle_red.svg',
-        image5:'../assets/pe_red.svg',
-        previous:'../assets/pe_vio.svg',
-        current:'../assets/pe_dkblue.svg',
-        answer:'YES'
-    },
-    {
-        question:'Is Biggest Image has the SAME SHAPE as last one?',
-        image1:'../assets/sq_lblue.svg',
-        image2:'../assets/circle_vio.svg',
-        image4:'../assets/sta_red.svg',
-        image5:'../assets/sq_lblue.svg',
-        previous:'../assets/pe_dkblue.svg',
-        current:'../assets/sta_bro.svg',
-        answer:'NO'
-    },
-    {
-        question:'Is Biggest Image has the SAME SHAPE as last one?',
-        image1:'../assets/sq_yell.svg',
-        image2:'../assets/sq_vio.svg',
-        image4:'../assets/circle_brow.svg',
-        image5:'../assets/tri_red.svg',
-        previous:'../assets/sta_bro.svg',
-        current:'../assets/sq_lblue.svg',
-        answer:'NO'
-    },
-    {
-        question:'Is Biggest Image has the SAME COLOUR as last one?',
-        image1:'../assets/sq_lblue.svg',
-        image2:'../assets/sta_yel.svg',
-        image4:'../assets/sta_red.svg',
-        image5:'../assets/circle_vio.svg',
-        previous:'../assets/sq_lblue.svg',
-        current:'../assets/pe_bro.svg',
-        answer:'NO'
-    },
-    {
-        question:'Is Biggest Image has the SAME SHAPE as last one?',
-        image1:'../assets/circle_red.svg',
-        image2:'../assets/sq_vio.svg',
-        image4:'../assets/sta_dk_blue.svg',
-        image5:'../assets/tri_pi.svg',
-        previous:'../assets/pe_bro.svg',
-        current:'../assets/pe_yel.svg',
-        answer:'YES'
-    },
-    {
-        question:'Is Biggest Image has the SAME SHAPE as last one?',
-        image1:'../assets/tri_brow.svg',
-        image2:'../assets/circle_brow.svg',
-        image4:'../assets/sta_red.svg',
-        image5:'../assets/sq_yell.svg',
-        previous:'../assets/pe_yel.svg',
-        current:'../assets/tri_vio.svg',
-        answer:'NO'
-    },
-    {
-        question:'Is Biggest Image has the SAME COLOUR as last one?',
-        image1:'../assets/circle_vio.svg',
-        image2:'../assets/sq_lblue.svg',
-        image4:'../assets/sta_bro.svg',
-        image5:'../assets/pe_red.svg',
-        previous:'../assets/tri_vio.svg',
-        current:'../assets/circle_vio.svg',
-        answer:'YES'
-    },
-    {
-        question:'Is Biggest Image has the SAME SHAPE as last one?',
-        image1:'../assets/tri_brow.svg',
-        image2:'../assets/sq_vio.svg',
-        image4:'../assets/sta_red.svg',
-        image5:'../assets/pe_red.svg',
-        previous:'../assets/circle_vio.svg',
-        current:'../assets/circle_red.svg',
-        answer:'YES'
-    },
-    {
-        question:'Is Biggest Image has the SAME SHAPE as last one?',
-        image1:'../assets/sq_brow.svg',
-        image2:'../assets/sq_vio.svg',
-        image4:'../assets/sta_red.svg',
-        image5:'../assets/pe_vio.svg',
-        previous:'../assets/circle_red.svg',
-        current:'../assets/sq_lblue.svg',
-        answer:'NO'
-    },
-    {
-        question:'Is Biggest Image has the SAME SHAPE as last one?',
-        image1:'../assets/sq_yell.svg',
-        image2:'../assets/tri_dkBlue.svg',
-        image4:'../assets/sta_pink.svg',
-        image5:'../assets/pe_red.svg',
-        previous:'../assets/sq_lblue.svg',
-        current:'../assets/sta_dk_blue.svg',
-        answer:'NO'
-    },
-    {
-        question:'Is Biggest Image has the SAME COLOUR as last one?',
-        image1:'../assets/sta_bro.svg',
-        image2:'../assets/sq_lblue.svg',
-        image4:'../assets/sta_red.svg',
-        image5:'../assets/pe_red.svg',
-        previous:'../assets/sta_dk_blue.svg',
-        current:'../assets/sq_red.svg',
-        answer:'NO'
-    },
-    {
-        question:'Is Biggest Image has the SAME SHAPE as last one?',
-        image1:'../assets/tri_dkBlue.svg',
-        image2:'../assets/sq_yell.svg',
-        image4:'../assets/sta_red.svg',
-        image5:'../assets/circle_red.svg',
-        previous:'../assets/sq_red.svg',
-        current:'../assets/sq_brow.svg',
-        answer:'NO'
-    },
-    {
-        question:'Is Biggest Image has the SAME COLOUR as last one?',
-        image1:'../assets/tri_pi.svg',
-        image2:'../assets/sq_lblue.svg',
-        image4:'../assets/sta_red.svg',
-        image5:'../assets/circle_red.svg',
-        previous:'../assets/sq_brow.svg',
-        current:'../assets/tri_brow.svg',
-        answer:'YES'
-    },
-    {
-        question:'Is Biggest Image has the SAME SHAPE as last one?',
-        image1:'../assets/circle_brow.svg',
-        image2:'../assets/tri_vio.svg',
-        image4:'../assets/sta_red.svg',
-        image5:'../assets/sq_lblue.svg',
-        previous:'../assets/tri_brow.svg',
-        current:'../assets/tri_vio.svg',
-        answer:'YES'
-    },
-    {
-        question:'Is Biggest Image has the SAME SHAPE as last one?',
-        image1:'../assets/circle_pink.svg',
-        image2:'../assets/tri_vio.svg',
-        image4:'../assets/sta_red.svg',
-        image5:'../assets/pe_red.svg',
-        previous:'../assets/tri_vio.svg',
-        current:'../assets/sta_red.svg',
-        answer:'NO'
-    },
-    {
-        question:'Is Biggest Image has the SAME COLOUR as last one?',
-        image1:'../assets/pe_bro.svg',
-        image2:'../assets/circle_vio.svg',
-        image4:'../assets/sta_red.svg',
-        image5:'../assets/tri_red.svg',
-        previous:'../assets/sta_red.svg',
-        current:'../assets/sta_pink.svg',
-        answer:'NO'
-    },
-    {
-        question:'Is Biggest Image has the SAME SHAPE as last one?',
-        image1:'../assets/tri_brow.svg',
-        image2:'../assets/sq_vio.svg',
-        image4:'../assets/sta_bro.svg',
-        image5:'../assets/tri_red.svg',
-        previous:'../assets/sta_pink.svg',
-        current:'../assets/sta_yel.svg',
-        answer:'YES'
-    },
-    {
-        question:'Is Biggest Image has the SAME SHAPE as last one?',
-        image1:'../assets/circle_red.svg',
-        image2:'../assets/sq_vio.svg',
-        image4:'../assets/tri_pi.svg',
-        image5:'../assets/pe_dkblue.svg',
-        previous:'../assets/sta_yel.svg',
-        current:'../assets/circle_yell.svg',
-        answer:'NO'
-    },
-    {
-        question:'Is Biggest Image has the SAME COLOUR as last one?',
-        image1:'../assets/circle_pink.svg',
-        image2:'../assets/pe_vio.svg',
-        image4:'../assets/pe_yel.svg',
-        image5:'../assets/tri_red.svg',
-        previous:'../assets/circle_yell.svg',
-        current:'../assets/sq_yell.svg',
-        answer:'YES'
-    },
-    {
-        question:'Is Biggest Image has the SAME SHAPE as last one?',
-        image1:'../assets/tri_vio.svg',
-        image2:'../assets/sq_vio.svg',
-        image4:'../assets/sta_red.svg',
-        image5:'../assets/pe_red.svg',
-        previous:'../assets/sq_yell.svg',
-        current:'../assets/sq_yell.svg',
         answer:'YES'
     },
     {
@@ -287,9 +26,9 @@ var questions = [
         image2:'../assets/tri_vio.svg',
         image4:'../assets/sta_red.svg',
         image5:'../assets/pe_yel.svg',
-        previous:'../assets/sq_yell.svg',
+        previous:'../assets/tri_vio.svg',
         current:'../assets/tri_dkBlue.svg',
-        answer:'NO'
+        answer:'YES'
     },
     {
         question:'Is Biggest Image has the SAME SHAPE as last one?',
@@ -308,7 +47,7 @@ var questions = [
         image4:'../assets/tri_brow.svg',
         image5:'../assets/sq_lblue.svg',
         previous:'../assets/tri_brow.svg',
-        current:'../assets/sq_lblue.svg',
+        current:'../assets/sq_red.svg',
         answer:'NO'
     },
     {
@@ -564,7 +303,7 @@ var questions = [
     {
         question:'Is Biggest Image has the SAME COLOUR as last one?',
         image1:'../assets/sta_bro.svg',
-        image2:'../assets/sq_vi.svg',
+        image2:'../assets/sq_vio.svg',
         image4:'../assets/sta_red.svg',
         image5:'../assets/circle_vio.svg',
         previous:'../assets/circle_red.svg',
@@ -581,67 +320,21 @@ var questions = [
         current:'../assets/sq_lblue.svg',
         answer:'YES'
     },
-    {
-        question:'Is Biggest Image has the SAME SHAPE as last one?',
-        image1:'../assets/sq_lblue.svg',
-        image2:'../assets/tri_brow.svg',
-        image4:'../assets/sta_red.svg',
-        image5:'../assets/pe_red.svg',
-        previous:'../assets/sq_lblue.svg',
-        current:'../assets/tri_pi.svg',
-        answer:'NO'
-    },
-    {
-        question:'Is Biggest Image has the SAME COLOUR as last one?',
-        image1:'../assets/sta_dk_blue.svg',
-        image2:'../assets/circle_vio.svg',
-        image4:'../assets/tri_red.svg',
-        image5:'../assets/pe_red.svg',
-        previous:'../assets/tri_brow.svg',
-        current:'../assets/tri_brow.svg',
-        answer:'YES'
-    },
-    {
-        question:'Is Biggest Image has the SAME COLOUR as last one?',
-        image1:'../assets/tri_dkBlue.svg',
-        image2:'../assets/sq_vio.svg',
-        image4:'../assets/sta_red.svg',
-        image5:'../assets/circle_vio.svg',
-        previous:'../assets/tri_brow.svg',
-        current:'../assets/circle_brow.svg',
-        answer:'YES'
-    },
-    {
-        question:'Is Biggest Image has the SAME SHAPE as last one?',
-        image1:'../assets/pe_bro.svg',
-        image2:'../assets/sq_vio.svg',
-        image4:'../assets/circle_brow.svg',
-        image5:'../assets/pe_red.svg',
-        previous:'../assets/circle_brow.svg',
-        current:'../assets/circle_pink.svg',
-        answer:'YES'
-    },
-    {
-        question:'Is Biggest Image has the SAME COLOUR as last one?',
-        image1:'../assets/tri_brow.svg',
-        image2:'../assets/sq_brow.svg',
-        image4:'../assets/circle_yell.svg',
-        image5:'../assets/pe_dkblue.svg',
-        previous:'../assets/circle_pink.svg',
-        current:'../assets/tri_dkBlue.svg',
-        answer:'NO'
-    },
-    {
-        question:'Is Biggest Image has the SAME SHAPE as last one?',
-        image1:'../assets/pe_bro.svg',
-        image2:'../assets/tri_vio.svg',
-        image4:'../assets/circle_pink.svg',
-        image5:'../assets/sq_lblue.svg',
-        previous:'../assets/tri_dkBlue.svg',
-        current:'../assets/tri_yell.svg',
-        answer:'YES'
-    }
 ];
+
+var start = document.getElementById("div_start");
+var btn_yes = document.getElementById("btn_yes"); 
+var btn_no = document.getElementById("btn_no");
+var img_c = document.getElementById("div_img_container");
+var question = document.getElementById("div_question");
+var img1 =document.getElementById("img1_div");
+var img2 =document.getElementById("img2_div");
+var img3 =document.getElementById("img3_div");
+var img4 =document.getElementById("img4_div");
+var img5 =document.getElementById("img5_div");
+let counter = document.getElementById("counter");
+var right_ans = document.getElementById("right_ans");
+var wrong_ans = document.getElementById("wrong_ans");
 
 
 window.onload = function (){
@@ -653,14 +346,16 @@ let averageTimeTaken = 0;
 let runningQuestion = 0;
 let timer1;   
 let q = questions[runningQuestion];
-let count1 = 50;
+let count1 = 15;
 let i=0;
 let totalTime = 0;
 let averagePercentage ;
 let speedSkill;
 let focusSkill;
 let correctPercentage;
-
+var ans_value;
+var cate;
+var level1;
 
 
 
@@ -669,19 +364,21 @@ function preQuestion(){
     img1.innerHTML = "<img src="+questions[20].image1+">";
     img2.innerHTML = "<img src="+questions[15].image2+">";
     img3.innerHTML = "<img src="+questions[0].previous+">";
-    img4.innerHTML = "<img src="+questions[45].image4+">";
-    img5.innerHTML = "<img src="+questions[36].image5+">";
+    img4.innerHTML = "<img src="+questions[17].image4+">";
+    img5.innerHTML = "<img src="+questions[16].image5+">";
   
     btn_yes.style.visibility='hidden';
     btn_no.style.visibility='hidden';
-    setTimeout(startQuestion,5000);
+    setTimeout(startQuestion,2000);
 }
 
 function startQuestion(){
 
     btn_yes.style.visibility='visible';
-    btn_no.style.visibility='visible';
-       
+    btn_no.style.visibility='visible';    
+        
+    
+    
     question.innerHTML = "<div>"+ q.question +"</div>";
     img1.innerHTML = "<img src="+ q.image1 +">";
     img2.innerHTML = "<img src="+ q.image2 +">";
@@ -692,7 +389,7 @@ function startQuestion(){
 }
 
 btn_yes.addEventListener("click",askQuestion);
-var ans_value;
+
 function askQuestion(){    
     ans_value ="YES";
     checkAnswer(ans_value);
@@ -723,20 +420,18 @@ function checkAnswer(ans){
  if(ans == questions[runningQuestion].answer)
  {
     totalCorrectAnswer++;
-    alert("Answer is Right");
-    
+    document.getElementById("right_ans").play();  
     runningQuestion++;
-    giveQuestions();
+   
+    
  }
  else{
-    alert("Answer is Wrong");
-   
+    document.getElementById("wrong_ans").play();
     runningQuestion++;
-    giveQuestions();
-    
- 
 }
 }
+
+
 
 function timerCount(){
     if(count1-1>=i){
@@ -744,27 +439,61 @@ function timerCount(){
         count1--;
     }
     else if(count1==i){
-        alert("Game Finished");
-       resultCalulation();        
+       clearTimeout(timer1);
+       resultCalulation();            
     }
 }
 
+
 function resultCalulation(){
-totalQuestionsAnswered = runningQuestion-1;
+totalQuestionsAnswered = runningQuestion;
 if (totalQuestionsAnswered <0){
     totalQuestionsAnswered = 0;
 }
-totalTime = 50 ;
-averageTimeTaken = totalQuestionsAnswered / 50;
+totalTime = 15 ;
+averageTimeTaken = totalQuestionsAnswered / 15;
 speedSkill = averageTimeTaken ;
 correctPercentage = totalCorrectAnswer/totalQuestionsAnswered;
 focusSkill = (correctPercentage * 100).toFixed(2);
-
-
 console.log(totalQuestionsAnswered);
-//console.log(totalTime);
 console.log(totalCorrectAnswer);
 console.log("Your Speed Skill: ",speedSkill);
 console.log("Your Focus Skill: ",focusSkill,"%");
+category(totalQuestionsAnswered,totalCorrectAnswer);
+
+window.localStorage.setItem('speedskill_bs3',speedSkill);
+window.localStorage.setItem('focusskill_bs3',focusSkill);
+window.localStorage.setItem('totalansweredquestions_bs3',totalQuestionsAnswered);
+window.localStorage.setItem('totalcorrectanswer_bs3',totalCorrectAnswer);
+window.localStorage.setItem('category_bs3',cate);
+
+window.location.replace("result3.html");  
 }
 
+function category(a,b){
+    var tQA = a;
+    var tCA = b;
+
+    if((tQA>15)&&(tCA<15)){
+        cate = "hybrid";
+    }
+
+    else if((tQA>0) && (tQA<=5)&& (tCA>0) && (tCA<=5)){
+        cate = "silver";
+    }
+
+    else if((tQA>=6) && (tQA<=10) && (tCA>=6) && (tCA<=10)){
+        cate ="gold";
+    }
+
+    else if((tQA>=11) && (tCA>=15))
+    {
+        cate = "platinum";
+    }
+    else if((tQA==0) && (tCA==0)){
+        cate = "zero";
+    }
+    else {
+        cate = "hybrid";
+    }
+}

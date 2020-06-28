@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Pangolin&display=swap');
+
 *{
     margin: 0;
     padding: 0;
@@ -6,6 +8,8 @@
 body{
     font-size: 20px;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
+    background-image: url("../assets/bg_try_1.png");
+    overflow-y: hidden;
 }
 
 #div_start{
@@ -17,12 +21,10 @@ body{
 
 #div_img_container{
     position: relative;
-     background-color:black;
-    /* background-image: url(../assets/sh\ bg3.jpg); */
     width: 900px;
-    height: 790px;
+    height: 730px;
     margin-top: 0px;
-    margin-left: 300px;
+    margin-left: 10px;
     align-content: stretch;
     float: left;
 }
@@ -100,29 +102,10 @@ body{
     cursor: pointer;
 }
 
-#div_container{
-    background-image: url(../assets/bg_try_1.png);
-    display: flex;
-}
 #div_question{
     font-size: 3rem;
     color: white;
     margin-left: 80px;
-}
-
-#progress{
-    width : 500px;
-    position: absolute;
-    padding:5px;
-    text-align: right;
-}
-
-.prog{
-    width : 25px;
-    height : 25px;
-    border: 1px solid white;
-    display: inline-block;
-    border-radius: 50%;
 }
 
 #timer{
@@ -133,11 +116,22 @@ body{
 }
 
 #counter{
+   
     font-size: 3em;
     color: goldenrod;
-    padding: 3px;
-    /* border-style: double; */
-    border:2px dotted burlywood;
     position: absolute;
     border-radius: 50px;
+    margin-top:200px;
+    margin-left: 1330px;
+}
+
+
+#time_heading{
+    position: absolute;
+    font-family: 'Pangolin';
+    font-size: 3rem;
+    color: lightgrey;
+    margin-left: 1250px;
+    margin-top: 70px;
+    text-align: center;
 }
