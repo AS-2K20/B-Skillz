@@ -7,7 +7,7 @@ btn_yes.addEventListener("click",function(){
     document.getElementById("mse_click").play();  
     setTimeout(f1,500);
         function f1() {
-            window.location.assign("intro2.html");         
+            window.location.assign("html/intro2.html");         
         }
 });
 
