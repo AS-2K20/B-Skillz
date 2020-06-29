@@ -15,7 +15,7 @@ btn_no.addEventListener("click",function(){
     document.getElementById("mse_click").play();  
     setTimeout(f2,500);
     function f2() {
-        window.location.assign("intro1_no.html");
+        window.location.assign("html/intro1_no.html");
     }
 
 });
