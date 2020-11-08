@@ -19,3 +19,7 @@ B_Skillz is the abbreviation of Brain Skillz. My Inspiration was 'Mind Games' (A
 ## Demo:
 
 https://as-2k20.github.io/B_Skillz---Game/
+
+## Note:
+
+This is my first Front-End project. I have developed this project when I was at the beginning stage of learning Front-End Technologies. At the point in time, I didn't follow coding conventions. And in near future, I will refactor this project's source code by following ALL THE CODING CONVENTIONS. 
