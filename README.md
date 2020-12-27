@@ -18,7 +18,7 @@ B_Skillz is the abbreviation of Brain Skillz. My Inspiration was 'Mind Games' (A
 
 ## Demo:
 
-https://as-2k20.github.io/B_Skillz---Game/
+https://as-2k20.github.io/B-Skillz/
 
 ## Note:
 
